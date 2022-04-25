@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex Sun_slides"] 1650865528 "Sun_slides.aux" "Sun_slides.bbl" "Sun_slides" 1650865530
+["bibtex Sun_slides"] 1650891529 "Sun_slides.aux" "Sun_slides.bbl" "Sun_slides" 1650892008
   "/usr/local/texlive/2021/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "Sun_slides.aux" 1650865530 5448 04181b228384511421303e7deaff4e13 ""
+  "Sun_slides.aux" 1650892008 5117 2420bfc6cea5916909ed3fff2ed441f4 ""
   "Sun_slides.bcf" 0 -1 0 ""
   "ref.bib" 1650820862 2084 f42319d14d09dddb86ad3b69a724fa8a ""
   (generated)
-  "Sun_slides.blg"
   "Sun_slides.bbl"
-["pdflatex"] 1650865528 "Sun_slides.tex" "Sun_slides.pdf" "Sun_slides" 1650865530
+  "Sun_slides.blg"
+["pdflatex"] 1650892006 "Sun_slides.tex" "Sun_slides.pdf" "Sun_slides" 1650892008
   "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -258,17 +258,17 @@
   "/usr/local/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1645915671 2724736 0b4f878fccd7a62b370585f463ba29ef ""
   "/usr/local/texlive/2021/texmf.cnf" 1616695596 577 4c1911a7228e554c6032256d3cf5567d ""
   "L1-L3.png" 1650819528 233049 c380332b5f2a8c3815c1d32b46af62ec ""
-  "Sun_slides.aux" 1650865530 5448 04181b228384511421303e7deaff4e13 ""
-  "Sun_slides.bbl" 1650865528 1395 15f3c4bfeb9fa2ffd69dd58c74e51126 "bibtex Sun_slides"
-  "Sun_slides.nav" 1650865530 2522 a3176d2828ee5744b4b0c94793cc56fb ""
-  "Sun_slides.out" 1650865530 274 11a08e05683e16fa69fda2691cfce21b ""
-  "Sun_slides.tex" 1650865525 11618 a25413e8594e6472ee34c22e5b7f3bc6 ""
+  "Sun_slides.aux" 1650892008 5117 2420bfc6cea5916909ed3fff2ed441f4 ""
+  "Sun_slides.bbl" 1650891530 1395 15f3c4bfeb9fa2ffd69dd58c74e51126 "bibtex Sun_slides"
+  "Sun_slides.nav" 1650892008 2429 2e5935eb775acd9f1faa70828ae0998b ""
+  "Sun_slides.out" 1650892008 274 11a08e05683e16fa69fda2691cfce21b ""
+  "Sun_slides.tex" 1650892006 10792 99aa46dda9a5733b5cc52ecbffe20659 ""
   "eigenvalue.jpg" 1650818437 184017 d965d7abf96c3b9c37b930c311e2ddea ""
   (generated)
-  "Sun_slides.log"
   "Sun_slides.nav"
-  "Sun_slides.toc"
   "Sun_slides.pdf"
+  "Sun_slides.toc"
   "Sun_slides.aux"
-  "Sun_slides.snm"
+  "Sun_slides.log"
   "Sun_slides.out"
+  "Sun_slides.snm"

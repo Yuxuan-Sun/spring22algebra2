@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.26)  25 APR 2022 01:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.26)  25 APR 2022 09:06
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -707,9 +707,6 @@ LaTeX Warning: Label `def:' multiply defined.
 
 LaTeX Warning: Label `def:' multiply defined.
 
-
-LaTeX Warning: Label `theo:' multiply defined.
-
 )
 \openout1 = `Sun_slides.aux'.
 
@@ -895,27 +892,27 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
 
-] [3
-
 ]pdfTeX warning (ext4): destination with the same identifier (name{eg:}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.115 \end{frame}
-                  [4
+l.94 \end{frame}
+                 [3
 
-] [5
+] [4
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{def:}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.131 \end{frame}
+l.110 \end{frame}
+                  [5
+
+]pdfTeX warning (ext4): destination with the same identifier (name{def:}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.123 \end{frame}
                   [6
 
-]pdfTeX warning (ext4): destination with the same identifier (name{def:}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.144 \end{frame}
-                  [7
+] [7
 
 ] [8
 
@@ -925,48 +922,42 @@ l.144 \end{frame}
 
 ] [11
 
-] [12
-
 ]pdfTeX warning (ext4): destination with the same identifier (name{def:}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.207 \end{frame}
-                  [13
+l.186 \end{frame}
+                  [12
+
+] [13
 
 ] [14
 
 ] [15
 
-]pdfTeX warning (ext4): destination with the same identifier (name{theo:}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.235 \end{frame}
-                  [16
-
 ]
-<eigenvalue.jpg, id=483, 630.355pt x 496.85625pt>
+<eigenvalue.jpg, id=453, 630.355pt x 496.85625pt>
 File: eigenvalue.jpg Graphic file (type jpg)
 <use eigenvalue.jpg>
-Package pdftex.def Info: eigenvalue.jpg  used on input line 239.
+Package pdftex.def Info: eigenvalue.jpg  used on input line 218.
 (pdftex.def)             Requested size: 189.10796pt x 149.05801pt.
- [17
+ [16
 
- <./eigenvalue.jpg>] [18
+ <./eigenvalue.jpg>] [17
 
 ]
-<L1-L3.png, id=539, 669.50125pt x 580.1675pt>
+<L1-L3.png, id=510, 669.50125pt x 580.1675pt>
 File: L1-L3.png Graphic file (type png)
 <use L1-L3.png>
-Package pdftex.def Info: L1-L3.png  used on input line 257.
+Package pdftex.def Info: L1-L3.png  used on input line 236.
 (pdftex.def)             Requested size: 200.85191pt x 174.05157pt.
- [19
+ [18
 
  <./L1-L3.png>] (./Sun_slides.bbl
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\translate ' on input line 1.
 
-) [20
+) [19
 
 ]
 \tf@nav=\write8
@@ -986,18 +977,18 @@ Package rerunfilecheck Info: File `Sun_slides.out' has not changed.
 (rerunfilecheck)             Checksum: 11A08E05683E16FA69FDA2691CFCE21B;274.
  ) 
 Here is how much of TeX's memory you used:
- 23863 strings out of 478994
- 459748 string characters out of 5858184
- 750017 words of memory out of 5000000
- 40745 multiletter control sequences out of 15000+600000
+ 23764 strings out of 478994
+ 457059 string characters out of 5858184
+ 749201 words of memory out of 5000000
+ 40649 multiletter control sequences out of 15000+600000
  420585 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,18n,132p,503b,877s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 131i,18n,132p,503b,558s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Sun_slides.pdf (20 pages, 512465 bytes).
+Output written on Sun_slides.pdf (19 pages, 506590 bytes).
 PDF statistics:
- 672 PDF objects out of 1000 (max. 8388607)
- 608 compressed objects within 7 object streams
- 52 named destinations out of 1000 (max. 500000)
- 119 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 642 PDF objects out of 1000 (max. 8388607)
+ 581 compressed objects within 6 object streams
+ 49 named destinations out of 1000 (max. 500000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 
