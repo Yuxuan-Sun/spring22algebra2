@@ -1,0 +1,36 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Douglass and Roehrle(2008)]{douglass_steinberg_2008}
+J.~Matthew Douglass and Gerhard Roehrle.
+\newblock The {Steinberg} {Variety} and {Representations} of {Reductive}
+  {Groups}.
+\newblock \emph{arXiv:0802.0764 [math]}, October 2008.
+\newblock URL \url{http://arxiv.org/abs/0802.0764}.
+\newblock arXiv: 0802.0764.
+
+\bibitem[Fulton and Harris(2004)]{fulton_representation_2004}
+William Fulton and Joe Harris.
+\newblock \emph{Representation {Theory}}, volume 129 of \emph{Graduate {Texts}
+  in {Mathematics}}.
+\newblock Springer New York, New York, NY, 2004.
+\newblock ISBN 978-3-540-00539-1 978-1-4612-0979-9.
+\newblock \doi{10.1007/978-1-4612-0979-9}.
+\newblock URL \url{http://link.springer.com/10.1007/978-1-4612-0979-9}.
+
+\bibitem[Humphreys(1972)]{Humph}
+James~E. Humphreys.
+\newblock \emph{Introduction to {L}ie algebras and representation theory}.
+\newblock Graduate Texts in Mathematics, Vol. 9. Springer-Verlag, New
+  York-Berlin, 1972.
+
+\bibitem[Seitz-Mcleese()]{seitz-mcleese_classifying_nodate}
+Miranda Seitz-Mcleese.
+\newblock {CLASSIFYING} {THE} {REPRESENTATIONS} {OF} sl2({C}).
+\newblock page~19.
+
+\end{thebibliography}
