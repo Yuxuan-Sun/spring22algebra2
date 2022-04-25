@@ -1,0 +1,498 @@
+% Tableau macros -- tabmac.sty, by Glenn Tesler
+% Do not further distribute until further notice; it's incomplete now.
+%
+% loading in LaTeX (<2e):
+% \documentstyle[...,tabmac,...]{article}
+% or to use arrows through pb-diagram, things must go in this order:
+%    \documentstyle[...,pb-diagram,tabmac,...]{article}
+% or \documentstyle[...,pb-diagram,lamsarrow,pb-lams,tabmac,...]{article}
+%
+% loading in LaTeX 2e:
+%    \usepackage{tabmac}
+% or \usepackage{pb-diagram,lamsarrow,pb-lams,tabmac}
+%
+% loading in plain TeX:
+%    \input tabmac.sty
+%
+%%%%%%%% DISABLED
+%%%%%%% \tableau[options]{row1|row2|...|rowk}       (can use \\ instead of |)
+%%%%%%%% \tableau*[options]{row1\\row2\\...\\rowk}
+%%%%%%%% rowk may be followed by optional | or \\, so to actually produce
+%%%%%%%% a final row with only one entry, terminate with || or \\ \\
+%
+% \tableau{row1 \cr row2 \cr ... rowk}
+% \tableau{row1 \\  row2 \\  ... rowk}
+% \tableau[options]{row1 \cr row2 \cr ... rowk}
+% \tableau[options]{row1 \\  row2 \\  ... rowk}
+% rowk may be followed by optional \\ or \cr, so to actually produce
+% a final row with only one entry, terminate with \cr\cr or \\ \\
+%
+% options:
+%       alignment:
+%               c: center,  b: bottom,  t: top
+%       diagram type:
+%		F: Ferrer's diagram	Y: Young diagram	E: empty
+%		               F	Y		E
+%             dflt cell frame  none     thin frame	no frame
+%             null cells       \bullet  thin frame	no content
+%             ~ (for skew)     \bullet  no frame	no frame or content
+%          a: use arrow font dimension as base instead of \strut
+%       cell size in multiples of current font's \strut's dimensions
+%              s: small (x1), m: medium (x2 -- default), l: large (x3)
+%              p: small partition sized
+% can set variable \Tscale for scaling as well.
+% If you do this, don't use s,m,l as they will override this setting.
+% can use font size declarations -- \tiny, \Large, etc. -- to change
+% font size and cell size, too.
+%
+% rowi has the form
+%	c1 & c2 & c3 & ... & cn \cr
+%%%%%%       c1,c2,c3,c4,...,cn		DISABLED
+% where these are the entries to go on the row.  Can use & instead of ,
+%%%%%% in * form, must use &		DISABLED
+% If no entry is given, the cell is a frame (Young) or a bullet (Ferrers)
+% special entries
+%%%%% (only \ forms available with \tableau*)	DISABLED
+%  \bullet, %@ = bullet (unframed in Ferrers, framed in Young)
+%  \bl        = blank (no frame in either)
+%  \sk, %~     = skew cell (use in upper left corner of tableau;
+%                      no frame in Young, bullet in Ferrer)
+%  \tf, %*     = thick frame
+%  \fl        = filled square
+%  \fr[options] = frame with these characteristics (use any combination
+%		  of letters)
+%			t,b,l,r: top, bottom, left, right
+%			w:	 thick frame
+%  \overlay ... = superimpose ... on this cell (terminate with another
+%                 \overlay, or with the end of the tab field)
+%  \overlay[??] ... = superimpose ... on this cell with alignment given by
+%                      combination of the characters in ??
+%                      t, c, b -- top, center, bottom
+%                      l, m, r -- left, middle, right
+%%%%%%%  \rp[N]	repeat this cell N times horizontally  **** DOESN'T WORK ****
+%
+% To get a blank row, use the one entry \bl on that row, i.e., |\bl|
+% because doing || will yield a one-square row (Young) or one bullet row
+% (Ferrers)
+%
+% The \arrow command from pb-diagram is implemented.
+% Use the exact same syntax for \arrow as in diagram.
+% Additional parameters which dgo@???? routines may set are two routines
+%    \def\tb@getnodesizehead#1#2{...}
+%    \def\tb@getnodesizetail#1#2{...}
+% which put the width & height of the text at the head or tail nodes
+% into number registers #1, #2, in units of scaled points.
+%
+% Arrow bugs:
+%    The tableau dimensions don't correspond to the restricted
+%    discrete arrow lengths, so when real small arrow wanted,
+%    only a longer one might be available; option ``a'' may help.
+%
+%    Dashed arrows may not be uniformly dashed.
+
+%  \skewptn(a1,b1,c1,d1,...|a2,b2,c2,d2,...|...)
+%  \skewptn[options](a1,b1,c1,d1,...|a2,b2,c2,d2,...|...)
+% for diagrams w/o fillings only:
+%	top row: draw a1 cells, leave b1 blank, draw c1 cells,...
+%	2nd row: draw a2 cells, leave b2 blank, draw c2 cells,...
+%	...
+% options are same as for \tableau.  Scaling is determined by \Pscale
+% instead of \Tscale, and the options s,m,l,p,a override it.
+
+
+
+%
+% More to do
+%    Add in LaTeX picture mode; put in alternate frames (dashed, oval, circle)
+%    from LaTeX picture mode instead of just the thin and bold frames,
+%    and use the picture mode \linethickness declaration instead of
+%    \tb@fframe,...
+%
+%
+% w/in tableau,   \dimen0=cell size, \dimen1=frame size, \dimen2=strut size
+% with option "a", \dimen2 is replaced by value better suited to arrows.
+%
+% Be very careful that all lines end in %
+% so that no spurious spaces are introduced anywhere.
+
+% who knows how @ is defined with all the ways this file could be loaded...
+% so save its current catcode and restore it at the end.
+\edef\savecatcodeat{\the\catcode`@}
+\catcode`\@=11
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	BEGIN code for \@ifnextchar from LaTeX, so that we can use in TeX too.
+%	Altered by changing its name only.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\@IFNEXTCHAR#1#2#3{\let\@tempe #1\def\@tempa{#2}\def\@tempb{#3}\futurelet
+    \@tempc\@IFNCH}
+\def\@IFNCH{\ifx \@tempc \@sptoken \let\@tempd\@xifnch
+      \else \ifx \@tempc \@tempe\let\@tempd\@tempa\else\let\@tempd\@tempb\fi
+      \fi \@tempd}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	END code for \@ifnextchar from LaTeX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\tb@ifSpecChars#1#2{#1}
+\def\tb@ifNoSpecChars#1#2{#2}
+
+\newcount\tb@rpN
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	\tableau
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Determine if * form used
+\def\tableau{%
+  \bgroup% matched in \tb@tableauD
+%%  \@ifstar{\let\Tif\tb@ifNoSpecChars\tb@tableauB}% *, don't use special chars
+%%          {\let\Tif\tb@ifSpecChars\tb@tableauB}% no *, use special chars
+%	\tb@tableauB%
+%}
+%
+%\def\tb@tableauB{%
+  \@IFNEXTCHAR[{\tb@tableauC}{\tb@tableauC[]}}     % add [] if no [options]
+
+\def\tb@tableauC[#1]{\hbox\bgroup%
+    \let\\=\cr% end line
+    \def\bl{\global\let\tbcellF\tb@cellNF}%
+    \def\tf{\global\let\tbcellF\tb@cellH}% highlighted cell
+%
+%   \dimen0=cell size, \dimen1=frame size, \dimen2=strut size
+    \dimen2=\ht\strutbox \advance\dimen2 by\dp\strutbox%
+    \ifx\baselinestretch\undefined\relax%
+    \else%
+% want \dimen2 = \dimen2 / \baselinestretch, but can't do that if
+% \baselinestretch has a decimal, so fake it to 2 decimal places.
+       \dimen0=100sp \dimen0=\baselinestretch\dimen0%
+       \dimen2=100\dimen2 \divide\dimen2 by\dimen0%
+    \fi%
+%
+    \let\tpos\tb@vcenter% default position
+    \tb@initYoung% default tableau type
+    \tb@options#1\eoo% parse options
+%
+    \let\arrow\tb@arrow%
+%
+    \dimen0=\Tscale\dimen2%
+    \dimen1=\dimen0 \advance\dimen1 by \tb@fframe%
+%
+    \lineskip=0pt\baselineskip=0pt% line spacing will be from \vbox to \dimen0
+%
+    % \mkcell{#1} --  format individual cell:
+    %   set cellF to default frame.
+    %   supply argument for cell if none given
+    %   format argument in sized box, then superimpose cell frame.
+    \def\tb@nothing{}%
+    \def\endcellno{$\rss\egroup\bss\egroup}% end cell w/o overlap
+    \def\endcell{\endcellno\kern-\dimen0}% end cell & prepare to overlap it
+    \def\begincell{\vbox to\dimen0\bgroup\vss\hbox to\dimen0\bgroup\hss$}%
+%    \def\overlay{\endcell\begincell}%
+    \let\overlay\tb@overlay%
+    \let\fl\tb@fl%
+    \let\fr\tb@fr%
+%%%    \let\rp\tb@rp%
+    \let\lss\hss\let\rss\hss\let\tss\vss\let\bss\vss% cell alignment
+    \def\mkcell##1{% format individual cell
+        \let\tbcellF\tb@cellD% default cell frame
+        \def\tb@cellarg{##1}% store cell contents
+        % provide default contents if cell empty
+        \ifx\tb@cellarg\tb@nothing\let\tb@cellarg\tb@cellE\fi%
+%
+%%%      \tb@rpN=0
+%%%      \loop%	% repeat cell contents 1 or rpN times, where rpN may be set
+%%%		% by the argument to mkcell
+	        \begincell\tb@cellarg\endcellno% the actual cell content
+	        \tbcellF% draw cell frame
+%%%      \ifnum\tb@rpN>1\advance\tb@rpN by-1%
+%%%%	\span\omit%
+%%%      \repeat%
+    }%
+%
+    \let\savecellF\tbcellF% save global value of cellF in case of nested tableau
+%     \Tif{\catcode`,=4\catcode`|=\active}{}%
+    \tb@tableauD%
+}%
+
+
+
+
+\let\tb@savetableauD\tableauD% save any current definition
+{% set up characters which will be interpreted as command characters
+% when the definition of \tableauD is read in
+%    \catcode`|=\active \catcode`*=\active \catcode`~=\active%
+%    \catcode`@=\active% command characters
+\gdef\tableauD#1{%
+%  \Tif{% make all the command characters active in math mode when #1 parsed
+%    \mathcode`|="8000 \mathcode`*="8000%
+%    \mathcode`~="8000 \mathcode`@="8000%
+%    \def@{\bullet}%
+%    \let|\cr% end line
+%    \let*\tf% highlighted cell
+%    \let~\sk% skew cell
+%  }{}%
+  \tpos{\tabskip=0pt\halign{&\mkcell{##}\cr#1\crcr}}%
+  \global\let\tbcellF\savecellF% restore global value
+  \egroup% match \hbox\bgroup at start of \tableauC
+  \egroup}% match \bgroup at start of \tableau
+}
+\let\tb@tableauD\tableauD% rename the command
+\let\tableauD\tb@savetableauD% restore old command with this name
+\let\tb@savetableauD\undefined
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                      Parse options in \tableau[options]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% pick out one option at a time until \eoo reached.
+\def\tb@options#1{\ifx#1\eoo\relax\else\tb@option#1\expandafter\tb@options\fi}
+
+% dispatch handler for each option
+\def\tb@option#1{%
+  \if#1t\let\tpos\tb@vtop\fi%        t = align at top
+  \if#1c\let\tpos\tb@vcenter\fi%     c = align at center
+  \if#1b\let\tpos\vbox\fi%           b = align at bottom
+  \if#1F\tb@initFerrers\fi%          F = Ferrers diagram
+  \if#1Y\tb@initYoung\fi%            Y = Young diagram
+  \if#1E\tb@initEmpty\fi%	     E = empty diagram
+  \if#1s\tb@initSmall\fi%            s = small boxes
+  \if#1m\tb@initMedium\fi%           m = medium boxes
+  \if#1l\tb@initLarge\fi%            l = large boxes
+  \if#1p\tb@initPartition\fi%        p = small partition sized boxes
+  \if#1a\tb@initArrow\fi%            a = use arrow font as base dimension
+}
+
+% alternate to \vcenter which starts math mode if necessary
+\def\tb@vcenter#1{\ifmmode\vcenter{#1}\else$\vcenter{#1}$\fi}
+
+% alternate to \vtop; the array produced by \halign has as its baseline
+% the lower border of the first row of the tableau, so move down by this
+% amount, and move up \ht\strutbox to align the top border with the
+% top of the text on this line.
+\def\tb@vtop#1{\hbox{\raise\ht\strutbox\hbox{\lower\dimen0\vtop{#1}}}}
+
+\def\tb@initPartition{\def\Tscale{.3}}
+\def\tb@initSmall{\def\Tscale{1}}
+\def\tb@initMedium{\def\Tscale{2}}
+\def\tb@initLarge{\def\Tscale{3}}
+
+% diagram has dimens hardcoded.  Arrow is .625em
+\def\tb@initArrow{\dimen2=1.25em}
+
+
+\def\tb@initYoung{%
+  \def\tb@cellE{}%				% empty cell stays empty
+  \let\tb@cellD\tb@cellN%			% default frame is normal frame
+  \def\sk{\global\let\tbcellF\tb@cellNF}}%	% skew cells are empty
+\def\tb@initFerrers{%
+  \def\tb@cellE{\bullet}%			% empty cell gets bullet
+  \let\tb@cellD\tb@cellNF%			% default frame is no frame
+  \def\sk{\bullet}}%				% skew cell gets bullet
+\def\tb@initEmpty{%
+  \def\tb@cellE{}%				% empty cell stays empty
+  \let\tb@cellD\tb@cellNF%			% default frame is no frame
+  \def\sk{\global\let\tbcellF\tb@cellNF}}%	% skew cells are empty
+
+\tb@initMedium% default scale
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%               draw square frame with edges of given thickness
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% initial refrence pt = upper right corner of cell
+\def\tb@sframe#1{%
+  \vbox to0pt{%            Embed frame in a box of no vert or hor extent
+    \vss%                            pull box above reference point
+    \hbox to0pt{%
+      \hss%                          pull box left of reference point
+      \vbox to\dimen1{%              Actual width of frame
+        \hrule depth #1 height0pt% draw top edge of frame
+        \vss%                     begin vcenter sides
+        \hbox to\dimen1{%           horiz box with side edges just inside
+          \vrule width #1 height\dimen1% left edge
+          \hss%                     stretch center
+          \vrule width #1%         right edge
+          }%
+        \vss%                     end vcenter sides
+        \hrule height #1 depth 0in% bottom edge
+        }%
+      \kern-\tb@hframe%           horiz alignment off by half line width
+      }%
+    \kern-\tb@hframe}}%           vert alignment off by half line width
+% alignment off by \dimen1-\dimen0=2\tb@hframe
+
+
+
+% should this be combined with picture modes' linethickness?
+% \tb@fframe = width of ordinary divider line
+% \tb@hframe = \tb@fframe/2
+% \tb@bframe = width of bold divider line;
+%     ought to have \tb@bframe >= \tb@fframe
+\def\tb@hframe{.2pt}\def\tb@fframe{.4pt}\def\tb@bframe{2pt}
+\def\tb@cellH{\tb@sframe{\tb@bframe}}       % bold frame
+\def\tb@cellNF{}                            % no frame
+\def\tb@cellN{\tb@sframe{\tb@fframe}}       % normal frame
+\let\tbcellF\tb@cellN                       % default is normal
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%               draw fragments of square frame with edges
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% initial refrence pt = upper right corner of cell
+\def\tb@Fsframe{%
+  \vbox to0pt{%            Embed frame in a box of no vert or hor extent
+    \vss%                            pull box above reference point
+    \hbox to0pt{%
+      \hss%                          pull box left of reference point
+      \vbox to\dimen1{%              Actual width of frame
+        \fr@iftop{\hrule depth \fr@width height0pt}{\vskip \fr@width}% draw top edge of frame
+        \vss%                     begin vcenter sides
+        \hbox to\dimen1{%           horiz box with side edges just inside
+	  \fr@ifleft{\vrule width \fr@width height\dimen1}{\hskip \fr@width}% left edge
+          \hss%                     stretch center
+          \fr@ifright{\vrule width \fr@width height\dimen1}{\hskip \fr@width}% right edge
+          }%
+        \vss%                     end vcenter sides
+        \fr@ifbottom{\hrule height \fr@width depth 0in}{\vskip\fr@width}% bottom edge
+        }%
+      \kern-\tb@hframe%           horiz alignment off by half line width
+      }%
+    \kern-\tb@hframe}}%           vert alignment off by half line width
+% alignment off by \dimen1-\dimen0=2\tb@hframe
+
+\def\tb@fr{\@IFNEXTCHAR[{\tb@fra}{\global\let\tbcellF\tb@cellN}}
+\def\tb@fra[#1]{%
+	\global\let\fr@iftop\tb@IFNO%			% set defaults
+	\global\let\fr@ifbottom\tb@IFNO%
+	\global\let\fr@ifleft\tb@IFNO%
+	\global\let\fr@ifright\tb@IFNO%
+	\global\let\fr@width\tb@fframe%
+	\global\let\tbcellF\tb@Fsframe%
+%
+	\froptions#1\eoo% parse options
+}
+% pick out one option at a time until \eoo reached
+\def\froptions#1{\ifx#1\eoo\relax\else\froption#1\expandafter\froptions\fi}
+% dispatch handler for each option
+\def\froption#1{
+	\if#1t\global\let\fr@iftop\tb@IFYES\fi%	% t = draw top of cell
+	\if#1b\global\let\fr@ifbottom\tb@IFYES\fi%	% b = draw bottom of cell
+	\if#1l\global\let\fr@ifleft\tb@IFYES\fi%	% l = draw left of cell
+	\if#1r\global\let\fr@ifright\tb@IFYES\fi%	% r = draw right of cell
+	\if#1w\global\let\fr@width\tb@bframe\fi%	% w = bold
+}
+\def\tb@IFYES#1#2{#1}
+\def\tb@IFNO#1#2{#2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                             overlay cell contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\tb@rpad{1pt}
+\def\tb@lpad{1pt}
+\def\tb@tpad{1.8pt}
+\def\tb@bpad{1.8pt}
+
+\def\tb@overlay{\endcell\@IFNEXTCHAR[{\tb@overlaya}{\begincell}}
+%\def\tb@overlay{\endcell\@IFNEXTCHAR[{\begincell}{\begincell}}
+\def\tb@overlaya[#1]{\vbox to\dimen0\bgroup%
+  \tb@overlayoptions#1\eoo%
+  \tss\hbox to\dimen0\bgroup\lss$}
+% pick out one option at a time until \eoo reached.
+\def\tb@overlayoptions#1{\ifx#1\eoo\relax\else\tb@overlayoption#1\expandafter\tb@overlayoptions\fi}
+
+% dispatch handler for each option
+\def\tb@overlayoption#1{
+  \if#1t\def\tss{\vskip\tb@tpad}\let\bss\vss\fi% t = align at top
+  \if#1c\let\tss\vss\let\bss\vss\fi%             c = align at center
+  \if#1b\def\bss{\vskip\tb@bpad}\let\tss\vss\fi% b = align at bottom
+  \if#1l\def\lss{\hskip\tb@lpad}\let\rss\hss\fi% l = align at left
+  \if#1m\let\lss\hss\let\rss\hss\fi%             m = align at middle
+  \if#1r\def\rss{\hskip\tb@rpad}\let\lss\hss\fi% r = align at right
+}
+
+\def\tb@fl{\endcell\begincell\vrule depth 0pt width \dimen0 height \dimen0 \endcell\begincell}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%		repeat a cell
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% don't process the argument on more than one repetition
+%%%%%\def\tb@rp[#1]{{\ifnum\tb@rpN=0\global\tb@rpN=#1\fi}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  \skewptn(a1,b1,c1,d1,...|a2,b2,c2,d2,...|...)
+%  \skewptn[options](a1,b1,c1,d1,...|a2,b2,c2,d2,...|...)
+% for diagrams w/o fillings only:
+%	top row: draw a1 cells, leave b1 blank, draw c1 cells,...
+%	2nd row: draw a2 cells, leave b2 blank, draw c2 cells,...
+%	...
+% options are same as for \tableau.  Scaling is determined by \Pscale
+% instead of \Tscale, and the options s,m,l,p,a override it.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\tbgobble#1{}
+\def\Pscale{1}
+
+\def\skewptn{%
+  \@IFNEXTCHAR[{\tb@ptnC}{\tb@ptnC[]}}     % add [] if no [options]
+
+\def\tb@ptnC[#1](#2){%
+	{%
+    \let\Tscale\Pscale% default scaling
+    \let\\=\cr% end line
+%
+   \def\tb@initYoung{%
+	\def\tb@cell{\hskip\dimen0\tb@cellN}%
+	\def\tb@kernA{\kern.5\dimen0}%
+	\def\tb@kernB{\kern-.5\dimen0}%
+   }%
+   \def\tb@initFerrers{%
+	\def\tb@cell{\hbox to\dimen0{\hss$\bullet$\hss}}%
+	\def\tb@kernA{}%
+	\def\tb@kernB{}%
+   }%
+%
+%   \dimen0=cell size, \dimen1=frame size, \dimen2=strut size
+    \dimen2=\ht\strutbox \advance\dimen2 by\dp\strutbox%
+    \ifx\baselinestretch\undefined\relax%
+    \else%
+% want \dimen2 = \dimen2 / \baselinestretch, but can't do that if
+% \baselinestretch has a decimal, so fake it to 2 decimal places.
+       \dimen0=100sp \dimen0=\baselinestretch\dimen0%
+       \dimen2=100\dimen2 \divide\dimen2 by\dimen0%
+    \fi%
+%
+    \let\tpos\tb@vcenter% default position
+    \tb@initYoung% default ptn type
+    \tb@options#1\eoo% parse options (cell size, alignment, Ferrers/Young)
+%
+    \dimen0=\Tscale\dimen2%
+    \dimen1=\dimen0 \advance\dimen1 by \tb@fframe%
+    \lineskip=0pt\baselineskip=0pt% line spacing will be from \vbox to \dimen0
+%
+    \tpos{\skewptnDnewline#2|)}%
+	}%
+}%
+
+
+\def\skewptnDnewline#1|{\vbox to\dimen0\bgroup\vss\tb@kernA\hbox\bgroup\skewptnEon#1,|}
+\def\skewptnDendline|{\egroup\tb@kernB\vss\egroup\@IFNEXTCHAR{)}{\tbgobble}{\skewptnDnewline}}
+\def\skewptnEon#1,{%
+	\tb@rpN=#1%
+	\ifnum#1>0
+	        \loop%
+%        	\hskip\dimen0\tb@cellN% draw cell frame
+%		\hbox to\dimen0{\hss$\tb@cellE$\hss}\tb@cellD%
+		\tb@cell%
+%		
+	        \ifnum\tb@rpN>1\advance\tb@rpN by-1%
+        	\repeat%
+	\fi%
+	\@IFNEXTCHAR{|}{\skewptnDendline}{\skewptnEoff}}
+\def\skewptnEoff#1,{\hskip #1\dimen0%
+	\@IFNEXTCHAR{|}{\skewptnDendline}{\skewptnEon}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\catcode`\@=\savecatcodeat
+\let\savecatcodeat\undefined

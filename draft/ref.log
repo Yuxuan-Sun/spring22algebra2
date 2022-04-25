@@ -1,0 +1,23 @@
+This is METAFONT, Version 2.71828182 (preloaded base=mf 2022.2.26)  12 APR 2022 19:33
+**ref.bbl ref.bib
+(ref.bbl
+! A statement can't begin with `@'.
+<to be read again> 
+                   @
+l.1 @
+     book {Humph,
+? 
+! Extra tokens will be flushed.
+<to be read again> 
+                   @
+l.1 @
+     book {Humph,
+? 
+! Emergency stop.
+<to be read again> 
+                   @
+l.1 @
+     book {Humph,
+End of file on the terminal!
+
+

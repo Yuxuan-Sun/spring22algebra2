@@ -1,0 +1,35 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Chriss and Ginzburg(2010)]{chriss_representation_2010}
+N.~Chriss and V.~Ginzburg.
+\newblock \emph{Representation {Theory} and {Complex} {Geometry}}.
+\newblock Birkhäuser Boston, Boston, 2010.
+\newblock ISBN 978-0-8176-4937-1 978-0-8176-4938-8.
+\newblock \doi{10.1007/978-0-8176-4938-8}.
+\newblock URL \url{http://link.springer.com/10.1007/978-0-8176-4938-8}.
+
+\bibitem[Douglass and Roehrle(2008)]{douglass_steinberg_2008}
+J.~M. Douglass and G.~Roehrle.
+\newblock The {Steinberg} {Variety} and {Representations} of {Reductive}
+  {Groups}.
+\newblock \emph{arXiv:0802.0764 [math]}, Oct. 2008.
+\newblock URL \url{http://arxiv.org/abs/0802.0764}.
+\newblock arXiv: 0802.0764.
+
+\bibitem[Humphreys(1972)]{Humph}
+J.~E. Humphreys.
+\newblock \emph{Introduction to {L}ie algebras and representation theory}.
+\newblock Graduate Texts in Mathematics, Vol. 9. Springer-Verlag, New
+  York-Berlin, 1972.
+
+\bibitem[Seitz-Mcleese()]{seitz-mcleese_classifying_nodate}
+M.~Seitz-Mcleese.
+\newblock {CLASSIFYING} {THE} {REPRESENTATIONS} {OF} sl2({C}).
+\newblock page~19.
+
+\end{thebibliography}

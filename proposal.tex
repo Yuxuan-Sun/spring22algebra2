@@ -1,0 +1,152 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsfonts, latexsym, amsthm, amsmath, framed}
+\usepackage{esvect}
+\usepackage{parskip}
+
+\usepackage{amsmath, amssymb, framed, tcolorbox}
+\tcbuselibrary{theorems}
+
+\usepackage{mathrsfs}
+\usepackage[hidelinks,colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
+
+\usepackage{natbib}
+\bibliographystyle{abbrvnat}
+\setcitestyle{authoryear,open={},close={}}
+
+\newcommand{\ba}{\backslash}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\rank}{\text{rank}}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+\newcounter{mytheorem}[section] \def\themytheorem{\thesection.\arabic{mytheorem}}
+\tcbset{
+defstyle/.style={fonttitle=\bfseries\upshape,
+arc=0mm, colback=yellow!5,colframe=yellow!80!black}, 
+theostyle/.style={fonttitle=\bfseries\upshape, colback=blue!5,colframe=blue!50!black},
+corstyle/.style={fonttitle=\bfseries\upshape, colback=green!5,colframe=green!30!black},
+}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{notation}{Notation}
+
+\pdfsuppresswarningpagegroup=1
+
+\title{Algebra 2 Term Paper Proposal}
+\author{Yuxuan Sun}
+
+
+\begin{document}
+	
+\maketitle
+
+\section{Introduction}
+This paper aims to offer sufficient introductions and examples to understand that given a finite solvable group $G$ which acts faithfully, irreducibly and quasi-primitively on a finite vector space $V$ and $G$ is not metacylic, $G$ always has a regular orbit on  $V$ except for a few small cases (\citep{yang_regular_2020}).
+
+
+\section{Terms and Theorems}
+
+The followings are from \citep{artinAlgebra}.
+
+\begin{definition}[simple group]
+	A group $G$ is \textit{simple} if it is not the trivial group and if it contains no proper normal subgroup - no normal subgroup other than  $\langle 1 \rangle $ and $G$.	
+\end{definition}
+
+\begin{corollary}
+	Cyclic groups of prime order are simple groups.
+\end{corollary}
+
+\begin{definition}[solvable]
+	A finite group $G$ is \textit{solvable} if it contains a chaine of subgroups \[
+	G = H_0 \subset H_1 \subset H_1 \subset \ldots \subset  H_k = \left\{ 1 \right\}  
+	\]  such that for every $i = 1, \ldots, k$, $H_i$ is a normal subgroup of $H_{i-1}$, and the quotient group $H_i\/H_{i+1}$ is a cyclic group.
+\end{definition}
+
+The followings are from \citep{fawcett_regular_2016}.
+
+\begin{definition}[base]
+	Let $G$ be a finite group acting faithfully on a set  $\Omega$. A \textit{base}  $\mathscr{B}$ for  $G$ is a non-empty subset of  $\Omega$ with the property that only the identity fixes every element of  $\mathscr{B}$.
+\end{definition}
+
+\begin{definition}[regular orbit]
+	Let $G$ be a finite group acting faithfully on a set  $\Omega$. If a base $\mathscr{B} = \left\{ \omega \right\} $ for some $\omega \in \Omega$, the the orbit $\left\{ \omega g : g \in  G \right\} $ of $G$ on  $\Omega$ is regular. 
+\end{definition}
+
+The followings are from \citep{gelander_countable_2008}.
+
+\begin{definition}{primitive action}
+	An action of a group $G$ on a set  $X$ is \textit{primitive} if  $\left| X \right| > 1$ and there are no $G$-invariant equivalence relations on $X$ apart from the two trivial ones. 
+
+
+	The trivial equivalence relations are those with a unique equivalence class, or with singletons as equivalence classes. When $\left| X \right| = 2$, we require that the action is not trivial.
+\end{definition}
+
+\begin{definition}{quasiprimitive action}
+	An action is called \textit{quasiprimitive} if every normal subgroup acts either trivially or transitively.
+\end{definition}
+
+\begin{definition}{quasiprimitive group}
+	A group is \textit{quasiprimitive} if it admits a faithful quasiprimitive action on a set.
+\end{definition}
+
+The following is from \citep{metacyclic}.
+
+\begin{definition}{metacyclic}
+	A group $G$ is \textit{metacyclic} if it has a cyclic normal subgroup  $N$ such that  $G \/ N$ is cyclic.
+\end{definition}
+	
+The followings are notations from \citep{yang_regular_2020}.
+
+\begin{notation}
+	Let $G$ be a finite group, let  $S$ be a subset of  $G$ and let  $\pi$ be a set of different primes.
+
+	For each prime $s$, we denote  \[
+		SP_s(S) = \left\{ \langle x \rangle | o(x) = s,x \in S \right\} \quad \text{and} \quad EP_s(S) = \left\{ x | o(x) = s,x \in S \right\}  
+	\] also, we denote \[
+	SP(S) = \cup SP_s(S) \quad \text{and} \quad EP(S) = \cup EP_s(S)
+	\]  \[
+	EP_{\pi}(S) = \cup_{s \in \pi} EP_s(S)
+	\] also, we denote \[
+	NEP(S) = \left| EP(S) \right| \quad \text{and} \quad NEP_s(S) = \left| EP_s(S) \right| 
+	\] \[
+	NEP_{\pi}(S) = \left| EP_{\pi}(S) \right| 
+	\] 
+	
+\end{notation}
+
+\section{Outline}
+\begin{enumerate}
+	\item provide examples of: 
+		\begin{itemize}
+\item a finite solvable group $G$ acts faithfully on a finite vector space $V$ 
+	\item a finite solvable group  $G$ acts faithfully, quasi-primitively on a finite vector space  $V$
+	\item a metacyclic group $G$
+\item a finite solvable, non-metacyclic, group $G$ acts faithfully on a finite vector space $V$ 
+\item a finite solvable, non-metacyclic,  group $G$ acts faithfully , quasi-primitively on a finite vector space $V$
+\item the notations listed above
+\end{itemize}
+\item Pick a theorem from the paper that could be expained regarding the limits of pages.
+\end{enumerate}
+
+
+
+\bibliography{ref}
+\end{document}

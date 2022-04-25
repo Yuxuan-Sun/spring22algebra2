@@ -1,0 +1,48 @@
+\begin{thebibliography}{5}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Artin(1991)]{artinAlgebra}
+M.~Artin.
+\newblock \emph{Algebra}.
+\newblock Prentice Hall, Inc., Englewood Cliffs, NJ, 1991.
+\newblock ISBN 0-13-004763-5.
+
+\bibitem[Fawcett et~al.(2016)Fawcett, O'Brien, and Saxl]{fawcett_regular_2016}
+J.~B. Fawcett, E.~A. O'Brien, and J.~Saxl.
+\newblock Regular orbits of symmetric and alternating groups.
+\newblock \emph{Journal of Algebra}, 458:\penalty0 21--52, July 2016.
+\newblock ISSN 00218693.
+\newblock \doi{10.1016/j.jalgebra.2016.02.018}.
+\newblock URL \url{http://arxiv.org/abs/1812.05880}.
+\newblock arXiv: 1812.05880.
+
+\bibitem[Gelander and Glasner(2008)]{gelander_countable_2008}
+T.~Gelander and Y.~Glasner.
+\newblock Countable {Primitive} {Groups}.
+\newblock \emph{Geometric and Functional Analysis}, 17\penalty0 (5):\penalty0
+  1479--1523, Jan. 2008.
+\newblock ISSN 1016-443X, 1420-8970.
+\newblock \doi{10.1007/s00039-007-0630-y}.
+\newblock URL \url{http://link.springer.com/10.1007/s00039-007-0630-y}.
+
+\bibitem[Li and Liu(2021)]{metacyclic}
+P.~Li and R.~Liu.
+\newblock Finite {$p$}-groups all of whose proper subgroups of class 2 are
+  metacyclic.
+\newblock \emph{Comm. Algebra}, 49\penalty0 (4):\penalty0 1667--1675, 2021.
+\newblock ISSN 0092-7872.
+\newblock \doi{10.1080/00927872.2020.1843048}.
+\newblock URL \url{https://doi.org/10.1080/00927872.2020.1843048}.
+
+\bibitem[Yang et~al.(2020)Yang, Vasil'ev, and Vdovin]{yang_regular_2020}
+Y.~Yang, A.~Vasil'ev, and E.~Vdovin.
+\newblock Regular orbits of finite primitive solvable groups, {III}.
+\newblock \emph{arXiv:1612.05959 [math]}, Dec. 2020.
+\newblock URL \url{http://arxiv.org/abs/1612.05959}.
+\newblock arXiv: 1612.05959.
+
+\end{thebibliography}

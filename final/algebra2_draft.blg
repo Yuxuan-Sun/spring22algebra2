@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: algebra2_draft.aux
+The style file: abbrvnat.bst
+Database file #1: ref.bib
+Warning--empty journal in seitz-mcleese_classifying_nodate
+Warning--empty year in seitz-mcleese_classifying_nodate
+Warning--empty year in seitz-mcleese_classifying_nodate
+You've used 5 entries,
+            2773 wiz_defined-function locations,
+            631 strings with 5543 characters,
+and the built_in function-call counts, 1913 in all, are:
+= -- 171
+> -- 83
+< -- 7
++ -- 29
+- -- 24
+* -- 131
+:= -- 311
+add.period$ -- 24
+call.type$ -- 5
+change.case$ -- 20
+chr.to.int$ -- 5
+cite$ -- 13
+duplicate$ -- 105
+empty$ -- 163
+format.name$ -- 35
+if$ -- 400
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 8
+newline$ -- 41
+num.names$ -- 20
+pop$ -- 51
+preamble$ -- 1
+purify$ -- 18
+quote$ -- 0
+skip$ -- 73
+stack$ -- 0
+substring$ -- 14
+swap$ -- 12
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 40
+warning$ -- 3
+while$ -- 16
+width$ -- 0
+write$ -- 86
+(There were 3 warnings)

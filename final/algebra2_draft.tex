@@ -1,0 +1,184 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsfonts, latexsym, amsthm, amsmath, framed}
+\usepackage{esvect}
+\usepackage{parskip}
+
+\usepackage{amsmath, amssymb, framed, tcolorbox}
+\tcbuselibrary{theorems}
+
+\usepackage{graphicx}
+
+\usepackage{mathrsfs}
+\usepackage[hidelinks,colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
+
+\usepackage{xcolor}
+
+\usepackage{natbib}
+\bibliographystyle{abbrvnat}
+\setcitestyle{authoryear,open={},close={}}
+
+\newcommand{\ba}{\backslash}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\rank}{\text{rank}}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\newtheoremstyle{bfnote}%
+  {}{}
+  {}{}
+  {\bfseries}{.}
+  { }{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+
+\theoremstyle{theorem} % set the style for the following theorems
+
+\newtheorem{thm}{Theorem}[section] %\newtheorem{name}{display-text}[numbered-within]
+
+\newtheorem{lem}[thm]{Lemma} %\newtheorem{name}[numbered-like]{display-text}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{alg}[thm]{Algorithm}
+
+\theoremstyle{bfnote}                  % switch to a different style
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{conj}[thm]{Conjecture}
+
+
+\theoremstyle{example}                       % another style
+\newtheorem{prob}[thm]{Problem}
+
+
+\theoremstyle{remark}                       % another style
+\newtheorem{exmp}[thm]{Example}  % (note:the "example" style is not really good for long examples-- typesets them in italics!)
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{claim}[thm]{Claim}
+\renewcommand{\theclaim}{}
+
+%% If you use numbered equations in a long document, it is preferred to number
+% as (x.y), where x is section number, y is equation number
+
+\numberwithin{equation}{section}
+
+
+
+
+\pdfsuppresswarningpagegroup=1
+
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\tcbuselibrary{theorems, skins, breakable}
+
+\title{Algebra 2 Draft}
+\author{Yuxuan Sun}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+This paper aims to introduce the properties of irreducible representations of the symmetric group, an extension of the properties of irreducible representation in a boarder context: topological context, so that hopefully some geometric intuitions could be grasped. Besides abstract algebra, some knowledge about point-set topology is assumed.
+
+The goal is to glance at the infinite-dimensional representations by studying Verma modules.
+
+\section{Lie Algebra}
+
+
+\begin{defn}[bracket, commutator, and Lie algebra, \citep{Humph}]\label{defn:bracket}
+	A vector space $L$ over a field $F$, with an operation $L \times L \to  L$, denoted $(x,y) \mapsto [xy]$ and called the  \textbf{bracket} or \textbf{commutator} of $x$ and  $y$, is called a  \textbf{Lie algebra} over $F$ if the following axioms are satisfied:
+
+	 \begin{enumerate}
+		 \item The bracket operation is bilinear
+\begin{enumerate}
+	\item $[x,y_1+y_2] = [x,y_1] + [x,y_2]$ and $[x_1+x_2,y] = [x_1,y] + [x_2,y]$
+	\item $[\lambda x, y] = \lambda[x,y] = [x, \lambda y]$
+\end{enumerate}
+		 \item $[x x] = 0$ for for all  $x \in L$
+		 \item $[x[yz]]+[y[zx]] +[z[xy]] = 0$,  $x,y,z \in L$
+	\end{enumerate}
+	usually, $[x,y] = xy - yx$	
+\end{defn}
+
+Notice that  \textbf{1.} and  \textbf{2.} together implies the \textbf{anti-commutativity} of Lie-algebra, namely \[
+	[x+y, x+y] = [x, x+y] + [y, x+y] = [x,x]+[x,y] + [y,x]+[y,y] = [x,y] + [y,x] = 0
+\]  so we have another version of \textbf{2.} \[
+[x,y] = -[y,x]
+\]  
+
+\bigskip
+
+Let's consider our Lie group to be $SL_2(\C)$. Intuitively, the Lie algebra that corresponds to a given Lie group is the tangent space of the manifold at the identity element of the group.
+
+To find the Lie algebra, $\mathfrak{sl}_2(\C)$, of Lie group ,$SL_2(\C)$, we need to use  $\epsilon$ to find the tangent space. Denote $\epsilon$ as a first order infinitesimal, that is, it's closer to  $0$ than any other real number, $\epsilon \neq 0$ and $\epsilon^2 = 0$. Thus the tangent space at the identity is simply all matrices $A$ s.t.  $I+A\epsilon \in SL_2(\C)$.
+
+\[
+	I + A \epsilon = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} + \begin{bmatrix} a & b \\ c & d \end{bmatrix} \epsilon = \begin{bmatrix} 1+a \epsilon & b \epsilon \\ c \epsilon & 1+d \epsilon \end{bmatrix}  
+\]
+Since we want $I + A \epsilon \in SL_2(\C)$, we need to calculate its determinant: \[
+	\text{det}(I + A \epsilon) = (1+a \epsilon)(1+d\epsilon) - c b \epsilon ^2 = (1 + (a+d)\epsilon + a d \epsilon^2) - b c \epsilon^2 = 1 + (a+d) \epsilon 
+\]
+Thus for the determinant to be zero, we need the trace of $\mathfrak{sl}_2(\C)$ to be  $0$.
+
+\bigskip
+
+\begin{exmp}[basis of $\mathfrak{sl}_2\C$, \citep{fulton_representation_2004}]
+	The trace of $\mathfrak{sl}_2\C$ needs to be $0$, and since they are $2 \times 2$  matrices, it means the number on the diagnoal must be the inverse of each other under addition. Explicitly, we could write $\mathfrak{sl}_2\C$ as:  \[
+		\mathfrak{sl}_2\C = \left\{ \begin{bmatrix} a & b \\
+		c & -a\end{bmatrix} \mid a,b,c \in \C  \right\}. 
+			\] We could see that each matrix in $\mathfrak{sl}_2\C$ is determined by  $3$ numbers ( $a,b,c$), thus the basis has  $3$ elements. If we just let  $a,b,c$ to be  $1$ we have an intuitive basis composed by:  \[
+				H = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}, \quad X = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}, \quad Y = \begin{bmatrix} 0 & 0 \\ 1 & 0 \end{bmatrix}  
+			\]  
+\end{exmp}
+
+\begin{exmp}[bracket of $\mathfrak{sl}_2\C$]
+	Let's define the bracket/commutator of $\mathfrak{sl}_2\C$ as the following. Given any  $A, B \in \mathfrak{sl}_2\C$, let: \[
+	\left[ A, B \right] = AB - BA. 
+\] One could check this bracket is well-defined. i.e. it satisfies the property we defined in \ref{defn:bracket} 
+\end{exmp}
+
+\section{Weyl group}
+
+\begin{defn}[adjoint map]	
+	Let $G$ be a matrix Lie group, with Lie algebra  $\mathfrak{g}$. Then for each  $A \in G$, define a linear map $Ad_A: \mathfrak{g} \to  \mathfrak{g}$ by the formula \[
+		Ad_A(X) = AXA^{-1}.
+	\] 
+\end{defn}
+
+\begin{defn}[Weyl group]
+	Let $\mathfrak{h}$ be the two-dimensional subspace of  $sl(3, \C)$. Let  $N$ be the subgroup of  $SU(3)$ consisting of those  $ A \in SU(3)$ s.t. $Ad_A(H)$ is an element of  $\mathfrak{h}$ for all  $H \in \mathfrak{h}$. Let $Z$ be the subgroup of  $SU(3)$ consisting of those  $A \in SU(3)$ s.t. $Ad_A(H)=H$ for all  $H \in \mathfrak{h}$.
+
+	The \textbf{Weyl group} of $SU(3)$, denoted  $W$, is the quotent group  $N/Z$. 
+\end{defn}
+
+
+
+\nocite{*}
+
+\newpage
+\bibliography{ref}
+\end{document}
+
+
+
+
+
+
+
+
+
+

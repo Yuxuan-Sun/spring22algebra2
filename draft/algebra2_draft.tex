@@ -1,0 +1,154 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsfonts, latexsym, amsthm, amsmath, framed}
+\usepackage{esvect}
+\usepackage{parskip}
+
+\usepackage{amsmath, amssymb, framed, tcolorbox}
+\tcbuselibrary{theorems}
+
+\usepackage{mathrsfs}
+\usepackage[hidelinks,colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
+
+\usepackage{xcolor}
+
+\usepackage{natbib}
+\bibliographystyle{abbrvnat}
+\setcitestyle{authoryear,open={},close={}}
+
+\newcommand{\ba}{\backslash}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\rank}{\text{rank}}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\pdfsuppresswarningpagegroup=1
+
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\tcbuselibrary{theorems, skins, breakable}
+
+\title{Algebra 2 Draft}
+\author{Yuxuan Sun}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+This paper aims to introduce the properties of irreducible representations of the symmetric group, an extension of the properties of irreducible representation in a boarder context: topological context, so that hopefully some geometric intuitions could be grasped. Besides abstract algebra, some knowledge about point-set topology is assumed.
+
+\section{Lie Algebra}
+\begin{definition}[matrix Lie group]
+\citep{seitz-mcleese_classifying_nodate}
+
+	A \textbf{matrix Lie group} over a filed $\mathbb{F}$ is a subgroup  $G$ of  $GL_n(\F)$, such that the group multiplication and iversion are smooth maps. \textcolor{red}{need to figure out what smooth maps mean here later} 
+\end{definition}
+
+\bigskip
+
+\begin{definition}[bracket, commutator, Lie algebra]
+\citep{Humph}
+
+	A vector space $L$ over a field $F$, with an operation $L \times L \to  L$, denoted $(x,y) \mapsto [xy]$ and called the  \textbf{bracket} or \textbf{commutator} of $x$ and  $y$, is called a  \textbf{Lie algebra} over $F$ if the following axioms are satisfied:
+
+	 \begin{enumerate}
+		 \item The bracket operation is bilinear
+\begin{enumerate}
+	\item $[x,y_1+y_2] = [x,y_1] + [x,y_2]$ and $[x_1+x_2,y] = [x_1,y] + [x_2,y]$
+	\item $[\lambda x, y] = \lambda[x,y] = [x, \lambda y]$
+\end{enumerate}
+		 \item $[x x] = 0$ for for all  $x \in L$
+		 \item $[x[yz]]+[y[zx]] +[z[xy]] = 0$,  $x,y,z \in L$
+	\end{enumerate}
+	usually, $[x,y] = xy - yx$	
+\end{definition}
+
+Notice that  \textbf{1.} and  \textbf{2.} together implies the \textbf{anti-commutativity} of Lie-algebra, namely \[
+	[x+y, x+y] = [x, x+y] + [y, x+y] = [x,x]+[x,y] + [y,x]+[y,y] = [x,y] + [y,x] = 0
+\]  so we have another version of \textbf{2.} \[
+[x,y] = -[y,x]
+\]  
+
+\bigskip
+
+Let's consider our Lie group to be $SL_2(\C)$. Intuitively, the Lie algebra that corresponds to a given Lie group is the tangent space of the manifold at the identity element of the group.
+
+To find the Lie algebra, $\mathfrak{sl}_2(\C)$, of Lie group ,$SL_2(\C)$, we need to use  $\epsilon$ to find the tangent space. Denote $\epsilon$ as a first order infinitesimal, that is, it's closer to  $0$ than any other real number, $\epsilon \neq 0$ and $\epsilon^2 = 0$. Thus the tangent space at the identity is simply all matrices $A$ s.t.  $I+A\epsilon \in SL_2(\C)$.
+
+\[
+	I + A \epsilon = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} + \begin{bmatrix} a & b \\ c & d \end{bmatrix} \epsilon = \begin{bmatrix} 1+a \epsilon & b \epsilon \\ c \epsilon & 1+d \epsilon \end{bmatrix}  
+\]
+Since we want $I + A \epsilon \in SL_2(\C)$, we need to calculate its determinant: \[
+	\text{det}(I + A \epsilon) = (1+a \epsilon)(1+d\epsilon) - c b \epsilon ^2 = (1 + (a+d)\epsilon + a d \epsilon^2) - b c \epsilon^2 = 1 + (a+d) \epsilon 
+\]
+Thus for the determinant to be zero, we need the trace of $\mathfrak{sl}_2(\C)$ to be  $0$.
+
+
+\section{Steinberg variety}
+\begin{definition}[Steinberg variety]
+\citep{douglass_steinberg_2008}
+
+	Let $G$ be a connected, reductive algebraic group defined over an algebraically closed field  $k$,  $\mathcal{B}$ is the variety of Borel subgroups of  $G$, and  $u$ is a unipotent element in  $G$. 
+
+	Let  $\mathfrak{g}$ denote the Lie algebra of  $G$, and let  $\mathfrak{N}$ denote the variety of nilpotent elements in  $\mathfrak{g}$. The Steinberg variety of  $G$ is  \[
+		Z = \left\{ \left( x, B, B' \right) \in  \mathfrak{N} \times \mathcal{B} \times \mathcal{B} | x \in \text{Lie}\left( B \right) \cap \text{Lie}\left( B' \right)   \right\} 
+	\] 
+	
+\end{definition}
+
+
+\section{Irreducible Representation}
+\begin{theorem}[Irreducible Rperesentation of the Symmetric Group.]
+	\citep{chriss_representation_2010}
+
+	Let $G = SL_n(\C)$,  $H(Z)$ stands for the top homology of the Steinberg variety  $Z$.
+
+	For any  $x \in \mathcal{N}$, let $d(x) = dim_{\R}\mathcal{B}_x$. Then
+
+	\begin{enumerate}
+		\item The $H_m(Z)$-module  $H_{d(x)}(\mathcal{B}_x)$ is simple;
+		\item The modules $H_{d(x)}(\mathcal{B}_x)$ and $H_{d(y)}(\mathcal{B}_y)$ are isomorphic if and only if $x$ is conjugate by  $G$ to  $y$.
+		\item The collection  $\left\{ H_{d(x)}(\mathcal{B}_x)  \right\} $
+		
+	\end{enumerate}
+	
+\end{theorem}
+
+
+\nocite{*}
+
+\newpage
+\bibliography{ref}
+\end{document}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,2 @@
+One problem could be to classify solvable primitive linear groups with 3 orbits. The other is using codegree set to recognize families of simple groups. If you have to choose, any problem related to finite group theory would be helpful.
+ 
