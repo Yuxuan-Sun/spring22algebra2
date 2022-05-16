@@ -1,54 +1,137 @@
-\begin{thebibliography}{6}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi: #1}\else
-  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
 
-\bibitem[Chriss and Ginzburg(2010)]{chriss_representation_2010}
-N.~Chriss and V.~Ginzburg.
-\newblock \emph{Representation {Theory} and {Complex} {Geometry}}.
-\newblock Birkhäuser Boston, Boston, 2010.
-\newblock ISBN 978-0-8176-4937-1 978-0-8176-4938-8.
-\newblock \doi{10.1007/978-0-8176-4938-8}.
-\newblock URL \url{http://link.springer.com/10.1007/978-0-8176-4938-8}.
+\datalist[entry]{nty/global//global/global}
+  \entry{fulton}{book}{}
+    \name{author}{2}{}{%
+      {{hash=FW}{%
+         family={Fulton},
+         familyi={F\bibinitperiod},
+         given={William},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Harris},
+         familyi={H\bibinitperiod},
+         given={Joe},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \list{publisher}{1}{%
+      {Springer New York}%
+    }
+    \strng{namehash}{FWHJ1}
+    \strng{fullhash}{FWHJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \verb{doi}
+    \verb 10.1007/978-1-4612-0979-9
+    \endverb
+    \field{isbn}{978-3-540-00539-1 978-1-4612-0979-9}
+    \field{series}{Graduate {Texts} in {Mathematics}}
+    \field{title}{Representation {Theory}}
+    \verb{url}
+    \verb http://link.springer.com/10.1007/978-1-4612-0979-9
+    \endverb
+    \field{volume}{129}
+    \list{location}{1}{%
+      {New York, NY}%
+    }
+    \verb{file}
+    \verb Fulton and Harris - 2004 - Representation Theory.pdf:/Users/yuxuansun
+    \verb /Zotero/storage/XTGKA6ZM/Fulton and Harris - 2004 - Representation Th
+    \verb eory.pdf:application/pdf
+    \endverb
+    \field{year}{2004}
+    \field{urlday}{18}
+    \field{urlmonth}{04}
+    \field{urlyear}{2022}
+  \endentry
 
-\bibitem[Douglass and Roehrle(2008)]{douglass_steinberg_2008}
-J.~M. Douglass and G.~Roehrle.
-\newblock The {Steinberg} {Variety} and {Representations} of {Reductive}
-  {Groups}.
-\newblock \emph{arXiv:0802.0764 [math]}, Oct. 2008.
-\newblock URL \url{http://arxiv.org/abs/0802.0764}.
-\newblock arXiv: 0802.0764.
+  \entry{hall}{book}{}
+    \name{author}{1}{}{%
+      {{hash=HBC}{%
+         family={Hall},
+         familyi={H\bibinitperiod},
+         given={Brian\bibnamedelima C.},
+         giveni={B\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \list{publisher}{1}{%
+      {Springer International Publishing}%
+    }
+    \strng{namehash}{HBC1}
+    \strng{fullhash}{HBC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \verb{doi}
+    \verb 10.1007/978-3-319-13467-3
+    \endverb
+    \field{isbn}{978-3-319-13466-6 978-3-319-13467-3}
+    \field{series}{Graduate {Texts} in {Mathematics}}
+    \field{shorttitle}{Lie {Groups}, {Lie} {Algebras}, and {Representations}}
+    \field{title}{Lie {Groups}, {Lie} {Algebras}, and {Representations}: {An}
+  {Elementary} {Introduction}}
+    \verb{url}
+    \verb https://link.springer.com/10.1007/978-3-319-13467-3
+    \endverb
+    \field{volume}{222}
+    \list{location}{1}{%
+      {Cham}%
+    }
+    \field{year}{2015}
+    \field{urlday}{17}
+    \field{urlmonth}{04}
+    \field{urlyear}{2022}
+  \endentry
 
-\bibitem[Fulton and Harris(2004)]{fulton_representation_2004}
-W.~Fulton and J.~Harris.
-\newblock \emph{Representation {Theory}}, volume 129 of \emph{Graduate {Texts}
-  in {Mathematics}}.
-\newblock Springer New York, New York, NY, 2004.
-\newblock ISBN 978-3-540-00539-1 978-1-4612-0979-9.
-\newblock \doi{10.1007/978-1-4612-0979-9}.
-\newblock URL \url{http://link.springer.com/10.1007/978-1-4612-0979-9}.
-
-\bibitem[Hall(2015)]{hall}
-B.~C. Hall.
-\newblock \emph{Lie {Groups}, {Lie} {Algebras}, and {Representations}: {An}
-  {Elementary} {Introduction}}, volume 222 of \emph{Graduate {Texts} in
-  {Mathematics}}.
-\newblock Springer International Publishing, Cham, 2015.
-\newblock ISBN 978-3-319-13466-6 978-3-319-13467-3.
-\newblock \doi{10.1007/978-3-319-13467-3}.
-\newblock URL \url{https://link.springer.com/10.1007/978-3-319-13467-3}.
-
-\bibitem[Humphreys(1972)]{Humph}
-J.~E. Humphreys.
-\newblock \emph{Introduction to {L}ie algebras and representation theory}.
-\newblock Graduate Texts in Mathematics, Vol. 9. Springer-Verlag, New
-  York-Berlin, 1972.
-
-\bibitem[Seitz-Mcleese()]{seitz-mcleese_classifying_nodate}
-M.~Seitz-Mcleese.
-\newblock {CLASSIFYING} {THE} {REPRESENTATIONS} {OF} sl2({C}).
-\newblock page~19.
-
-\end{thebibliography}
+  \entry{humph}{book}{}
+    \name{author}{1}{}{%
+      {{hash=HJE}{%
+         family={Humphreys},
+         familyi={H\bibinitperiod},
+         given={James\bibnamedelima E.},
+         giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer-Verlag, New York-Berlin}%
+    }
+    \strng{namehash}{HJE1}
+    \strng{fullhash}{HJE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{pages}{xii+169}
+    \field{series}{Graduate Texts in Mathematics, Vol. 9}
+    \field{title}{Introduction to {L}ie algebras and representation theory}
+    \field{year}{1972}
+  \endentry
+\enddatalist
+\endinput

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.26)  5 MAY 2022 11:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.26)  13 MAY 2022 10:41
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -432,32 +432,243 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
 )
 \Hy@SectionHShift=\skip56
-) (/usr/local/texlive/2021/texmf-dist/tex/latex/natbib/natbib.sty
-Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip57
-\bibsep=\skip58
-LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count291
-) (/usr/local/texlive/2021/texmf-dist/tex/latex/import/import.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2020/12/31 v3.16 programmable bibliographies (PK/MW)
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count291
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+)) (/usr/local/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@tabx@nest=\count292
+\c@listtotal=\count293
+\c@listcount=\count294
+\c@liststart=\count295
+\c@liststop=\count296
+\c@citecount=\count297
+\c@citetotal=\count298
+\c@multicitecount=\count299
+\c@multicitetotal=\count300
+\c@instcount=\count301
+\c@maxnames=\count302
+\c@minnames=\count303
+\c@maxitems=\count304
+\c@minitems=\count305
+\c@citecounter=\count306
+\c@maxcitecounter=\count307
+\c@savedcitecounter=\count308
+\c@uniquelist=\count309
+\c@uniquename=\count310
+\c@refsection=\count311
+\c@refsegment=\count312
+\c@maxextratitle=\count313
+\c@maxextratitleyear=\count314
+\c@maxextraname=\count315
+\c@maxextradate=\count316
+\c@maxextraalpha=\count317
+\c@abbrvpenalty=\count318
+\c@highnamepenalty=\count319
+\c@lownamepenalty=\count320
+\c@maxparens=\count321
+\c@parenlevel=\count322
+\blx@tempcnta=\count323
+\blx@tempcntb=\count324
+\blx@tempcntc=\count325
+\blx@maxsection=\count326
+\blx@maxsegment@0=\count327
+\blx@notetype=\count328
+\blx@parenlevel@text=\count329
+\blx@parenlevel@foot=\count330
+\blx@sectionciteorder@0=\count331
+\blx@entrysetcounter=\count332
+\blx@biblioinstance=\count333
+\labelnumberwidth=\skip57
+\labelalphawidth=\skip58
+\biblabelsep=\skip59
+\bibitemsep=\skip60
+\bibnamesep=\skip61
+\bibinitsep=\skip62
+\bibparsep=\skip63
+\bibhang=\skip64
+\blx@bcfin=\read4
+\blx@bcfout=\write6
+\blx@langwohyphens=\language87
+\c@mincomprange=\count334
+\c@maxcomprange=\count335
+\c@mincompwidth=\count336
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2020/12/31 v3.16 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count337
+\c@savedafterword=\count338
+\c@annotator=\count339
+\c@savedannotator=\count340
+\c@author=\count341
+\c@savedauthor=\count342
+\c@bookauthor=\count343
+\c@savedbookauthor=\count344
+\c@commentator=\count345
+\c@savedcommentator=\count346
+\c@editor=\count347
+\c@savededitor=\count348
+\c@editora=\count349
+\c@savededitora=\count350
+\c@editorb=\count351
+\c@savededitorb=\count352
+\c@editorc=\count353
+\c@savededitorc=\count354
+\c@foreword=\count355
+\c@savedforeword=\count356
+\c@holder=\count357
+\c@savedholder=\count358
+\c@introduction=\count359
+\c@savedintroduction=\count360
+\c@namea=\count361
+\c@savednamea=\count362
+\c@nameb=\count363
+\c@savednameb=\count364
+\c@namec=\count365
+\c@savednamec=\count366
+\c@translator=\count367
+\c@savedtranslator=\count368
+\c@shortauthor=\count369
+\c@savedshortauthor=\count370
+\c@shorteditor=\count371
+\c@savedshorteditor=\count372
+\c@labelname=\count373
+\c@savedlabelname=\count374
+\c@institution=\count375
+\c@savedinstitution=\count376
+\c@lista=\count377
+\c@savedlista=\count378
+\c@listb=\count379
+\c@savedlistb=\count380
+\c@listc=\count381
+\c@savedlistc=\count382
+\c@listd=\count383
+\c@savedlistd=\count384
+\c@liste=\count385
+\c@savedliste=\count386
+\c@listf=\count387
+\c@savedlistf=\count388
+\c@location=\count389
+\c@savedlocation=\count390
+\c@organization=\count391
+\c@savedorganization=\count392
+\c@origlocation=\count393
+\c@savedoriglocation=\count394
+\c@origpublisher=\count395
+\c@savedorigpublisher=\count396
+\c@publisher=\count397
+\c@savedpublisher=\count398
+\c@language=\count399
+\c@savedlanguage=\count400
+\c@origlanguage=\count401
+\c@savedoriglanguage=\count402
+\c@pageref=\count403
+\c@savedpageref=\count404
+\shorthandwidth=\skip65
+\shortjournalwidth=\skip66
+\shortserieswidth=\skip67
+\shorttitlewidth=\skip68
+\shortauthorwidth=\skip69
+\shorteditorwidth=\skip70
+\locallabelnumberwidth=\skip71
+\locallabelalphawidth=\skip72
+\localshorthandwidth=\skip73
+\localshortjournalwidth=\skip74
+\localshortserieswidth=\skip75
+\localshorttitlewidth=\skip76
+\localshortauthorwidth=\skip77
+\localshorteditorwidth=\skip78
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load BibTeX backend compatibility...
+Package biblatex Info: ... file 'blx-bibtex.def' found.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/blx-bibtex.def
+File: blx-bibtex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
+
+
+Package biblatex Warning: Using fall-back BibTeX(8) backend:
+(biblatex)                functionality may be reduced/unavailable.
+
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
+\c@textcitecount=\count405
+\c@textcitetotal=\count406
+\c@textcitemaxnames=\count407
+\c@biburlbigbreakpenalty=\count408
+\c@biburlbreakpenalty=\count409
+\c@biburlnumpenalty=\count410
+\c@biburlucpenalty=\count411
+\c@biburllcpenalty=\count412
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count413
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count414
+\c@bbx:relatedtotal=\count415
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+File: numeric.cbx 2020/12/31 v3.16 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)) (/usr/local/texlive/2021/texmf-dist/tex/latex/import/import.sty
 Package: import 2020/04/01  v 6.2
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/xifthen/xifthen.sty
 Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
  (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count292
-\calc@Bcount=\count293
+\calc@Acount=\count416
+\calc@Bcount=\count417
 \calc@Adimen=\dimen197
 \calc@Bdimen=\dimen198
-\calc@Askip=\skip59
-\calc@Bskip=\skip60
+\calc@Askip=\skip79
+\calc@Bskip=\skip80
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count294
-\calc@Cskip=\skip61
-) (/usr/local/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
+\calc@Ccount=\count418
+\calc@Cskip=\skip81
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
 Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
 )) (/usr/local/texlive/2021/texmf-dist/tex/latex/pdfpages/pdfpages.sty
 Package: pdfpages 2021/03/06 v0.5t Insert pages of external PDF documents (AM)
@@ -472,20 +683,20 @@ Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
  (/usr/local/texlive/2021/texmf-dist/tex/latex/pdfpages/pppdftex.def
 File: pppdftex.def 2021/03/06 v0.5t Pdfpages driver for pdfTeX (AM)
 )
-\pdfpages@includegraphics@status=\count295
+\pdfpages@includegraphics@status=\count419
 \AM@pagebox=\box64
 \AM@global@opts=\toks42
-\AM@pagecnt=\count296
+\AM@pagecnt=\count420
 \AM@toc@title=\toks43
-\c@AM@survey=\count297
+\c@AM@survey=\count421
 \AM@templatesizebox=\box65
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/transparent/transparent.sty
 Package: transparent 2019/11/29 v1.4 Transparency via pdfTeX's color stack (HO)
 )
-\c@thm=\count298
+\c@thm=\count422
 
 
-Package amsthm Warning: Unknown theoremstyle `example' on input line 62.
+Package amsthm Warning: Unknown theoremstyle `example' on input line 65.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2020/12/27 v3.1.8b (3.1.8b)
@@ -498,7 +709,7 @@ Package: pgffor 2020/12/27 v3.1.8b (3.1.8b)
 Package: tikz 2020/12/27 v3.1.8b (3.1.8b)
  (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@plot@mark@count=\count299
+\pgf@plot@mark@count=\count423
 \pgfplotmarksize=\dimen262
 )
 \tikz@lastx=\dimen263
@@ -513,17 +724,17 @@ File: pgflibraryplothandlers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 \tikz@figbox@bg=\box67
 \tikz@tempbox=\box68
 \tikz@tempbox@bg=\box69
-\tikztreelevel=\count300
-\tikznumberofchildren=\count301
-\tikznumberofcurrentchild=\count302
-\tikz@fig@count=\count303
+\tikztreelevel=\count424
+\tikznumberofchildren=\count425
+\tikznumberofcurrentchild=\count426
+\tikz@fig@count=\count427
  (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfmatrixcurrentrow=\count304
-\pgfmatrixcurrentcolumn=\count305
-\pgf@matrix@numberofcolumns=\count306
+\pgfmatrixcurrentrow=\count428
+\pgfmatrixcurrentcolumn=\count429
+\pgf@matrix@numberofcolumns=\count430
 )
-\tikz@expandcount=\count307
+\tikz@expandcount=\count431
  (/usr/local/texlive/2021/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 ))) (/usr/local/texlive/2021/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
@@ -540,43 +751,46 @@ Package pdfcol Info: New color stack `tcb@breakable' = 2 on input line 23.
 \tcb@testbox=\box71
 \tcb@totalupperbox=\box72
 \tcb@totallowerbox=\box73
-) (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+)
+\@quotelevel=\count432
+\@quotereset=\count433
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count308
+\l__color_backend_stack_int=\count434
 \l__pdf_internal_box=\box74
 ) (./algebra2_draft.aux)
 \openout1 = `algebra2_draft.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
  (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count309
+\scratchcounter=\count435
 \scratchdimen=\dimen271
 \scratchbox=\box75
-\nofMPsegments=\count310
-\nofMParguments=\count311
+\nofMPsegments=\count436
+\nofMParguments=\count437
 \everyMPshowfont=\toks46
-\MPscratchCnt=\count312
+\MPscratchCnt=\count438
 \MPscratchDim=\dimen272
-\MPnumerator=\count313
-\makeMPintoPDFobject=\count314
+\MPnumerator=\count439
+\makeMPintoPDFobject=\count440
 \everyMPtoPDFconversion=\toks47
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -584,7 +798,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2021/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 90.
+Package hyperref Info: Link coloring ON on input line 94.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/local/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
@@ -592,15 +806,44 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/local/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count315
+\c@section@level=\count441
 )
-LaTeX Info: Redefining \ref on input line 90.
-LaTeX Info: Redefining \pageref on input line 90.
-LaTeX Info: Redefining \nameref on input line 90.
+LaTeX Info: Redefining \ref on input line 94.
+LaTeX Info: Redefining \pageref on input line 94.
+LaTeX Info: Redefining \nameref on input line 94.
  (./algebra2_draft.out) (./algebra2_draft.out)
-\@outlinefile=\write6
-\openout6 = `algebra2_draft.out'.
+\@outlinefile=\write7
+\openout7 = `algebra2_draft.out'.
 
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+Package biblatex Info: Input encoding 'utf8' specified.
+Package biblatex Info: Data encoding 'utf8' specified.
+(biblatex)             No need to reencode data.
+Package biblatex Info: Document encoding is UTF8 ....
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2021-02-18 L3 programming layer (loader) 
+)
+Package biblatex Info: ... and expl3
+(biblatex)             2021-02-18 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty (/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse-2020-10-01.sty (/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.tex)))
+Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
+)
+\openout6 = `algebra2_draft-blx.bib'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'algebra2_draft.bbl' found.
+ (./algebra2_draft.bbl)
+Package biblatex Info: Reference section=0 on input line 94.
+Package biblatex Info: Reference segment=0 on input line 94.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
  (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/lscape.sty
@@ -608,30 +851,34 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 93.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 97.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 93.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 97.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 93.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 97.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+esvect on input line 93.
+LaTeX Font Info:    Trying to load font information for U+esvect on input line 97.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/esvect/uesvect.fd
 File: uesvect.fd 
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 93.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 97.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+euf on input line 103.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 97.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [1
+) (./algebra2_draft.toc)
+\tf@toc=\write8
+\openout8 = `algebra2_draft.toc'.
+
+ [1
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
@@ -647,27 +894,54 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 136.
 
 
-Overfull \hbox (2.59048pt too wide) detected at line 150
+Overfull \hbox (2.59048pt too wide) detected at line 149
 \OMS/cmsy/m/n/10 B[] \OT1/cmr/m/n/10 = [] [] [] \OML/cmm/m/it/10 :
  []
 
-[2] [3] [4] (./algebra2_draft.bbl) [5] (./algebra2_draft.aux)
+[2] [3] [4]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 244.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 244.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 244.
+
+<eigenvalue.jpg, id=100, 630.355pt x 496.85625pt>
+File: eigenvalue.jpg Graphic file (type jpg)
+<use eigenvalue.jpg>
+Package pdftex.def Info: eigenvalue.jpg  used on input line 254.
+(pdftex.def)             Requested size: 216.81pt x 170.89247pt.
+[5 <./eigenvalue.jpg>]
+<L1-L3.jpg, id=117, 669.50125pt x 580.1675pt>
+File: L1-L3.jpg Graphic file (type jpg)
+<use L1-L3.jpg>
+Package pdftex.def Info: L1-L3.jpg  used on input line 284.
+(pdftex.def)             Requested size: 289.07999pt x 250.51176pt.
+ [6 <./L1-L3.jpg>] [7] [8] (./algebra2_draft.aux)
 Package rerunfilecheck Info: File `algebra2_draft.out' has not changed.
-(rerunfilecheck)             Checksum: 87D703CB6796E575B389FD18E0E5A81F;464.
+(rerunfilecheck)             Checksum: 2D74AF81D11561AC6A84A6F1AD89F84B;1287.
+Package logreq Info: Writing requests to 'algebra2_draft.run.xml'.
+\openout1 = `algebra2_draft.run.xml'.
+
  ) 
 Here is how much of TeX's memory you used:
- 24248 strings out of 478994
- 465197 string characters out of 5858184
- 786785 words of memory out of 5000000
- 41236 multiletter control sequences out of 15000+600000
- 416801 words of font info for 91 fonts, out of 8000000 for 9000
+ 30962 strings out of 478994
+ 602363 string characters out of 5858184
+ 1127369 words of memory out of 5000000
+ 47884 multiletter control sequences out of 15000+600000
+ 419956 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 112i,14n,116p,507b,423s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on algebra2_draft.pdf (5 pages, 188003 bytes).
+ 112i,14n,116p,1828b,1357s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on algebra2_draft.pdf (8 pages, 527727 bytes).
 PDF statistics:
- 161 PDF objects out of 1000 (max. 8388607)
- 135 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 45 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 219 PDF objects out of 1000 (max. 8388607)
+ 182 compressed objects within 2 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 79 words of extra memory for PDF output out of 10000 (max. 10000000)
 
